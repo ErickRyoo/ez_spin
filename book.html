@@ -32,18 +32,18 @@
       align-items: center;
       height: inherit;
       padding: 20px;
+      background-color: #26bdef;
       }
       form {
-      width: 850px;
+      width: 700px;
       padding: 20px;
       border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 30px 0 #26bdef; 
+      background: #fff; 
       }
       .banner {
       position: relative;
       height: 210px;
-      background-image: url("images/hehe.jpg");  
+      background-image: url("images/bookk.jpg");  
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -109,11 +109,11 @@
       opacity: 0;
       cursor: pointer;
       }
-      input[type=radio] {
+      input[type=radio], input[type=checkbox] {
       width: 0;
       visibility: hidden;
       }
-      label.radio {
+      label.radio, label.checkbox {
       position: relative;
       display: inline-block;
       margin: 5px 20px 25px 0;
@@ -122,7 +122,7 @@
       .question span {
       margin-left: 30px;
       }
-      label.radio:before {
+      label.radio:before, label.checkbox:before{
       content: "";
       position: absolute;
       left: 0;
@@ -131,7 +131,12 @@
       border-radius: 50%;
       border: 2px solid #26bdef;
       }
-      label.radio:after {
+      label.checkbox:before{ border-radius:5px}
+      input[type=radio]:checked + label:before, label.radio:hover:before,
+      input[type=checkbox]:checked + label:before, label.checkbox:hover:before{
+        border: 2px solid #3263cd;
+      }
+      label.radio:after, label.checkbox:after {
       content: "";
       position: absolute;
       width: 8px;
@@ -145,7 +150,7 @@
       transform: rotate(-45deg);
       opacity: 0;
       }
-      input[type=radio]:checked + label:after {
+      input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
       opacity: 1;
       }
       .btn-block {
@@ -184,7 +189,7 @@
     <div class="testbox">
       <form action="/">
         <div class="banner">
-          <h1>Ez Spin is on our way to get your LABA-DONE!</h1>
+          <h1>Ez Spin is on your way to get your LABA-DONE!</h1>
         </div>
         <div class="item">
           <p>Name</p>
@@ -233,33 +238,25 @@
             <input type="text" name="daddress" required/>
           </div>
         </div>
-        <div class="item">
-          <p>Laundry Services</p>
-          <div class="item">
-            <select >
-              <option value="">Service 1</option>
-              <option value="1">Wash Dry & Fold</option>
-              <option value="2">Dry cleaning</option>
-              <option value="3">Iron/Press</option>
-              <option value="4">Handwash</option>
-              <option value="5">Beng Beng</option>
-            </select>
-            <select >
-              <option value="">Service 2</option>
-              <option value="1">Wash Dry & Fold</option>
-              <option value="2">Dry cleaning</option>
-              <option value="3">Iron/Press</option>
-              <option value="4">Handwash</option>
-              <option value="5">Beng Beng</option>
-            </select>
-            <select >
-              <option value="">Service 3</option>
-              <option value="1">Wash Dry & Fold</option>
-              <option value="2">Dry cleaning</option>
-              <option value="3">Iron/Press</option>
-              <option value="4">Handwash</option>
-              <option value="5">Beng Beng</option>
-            </select>
+        <div class="question">
+          <p>What services you want to avail?</p>
+          <div class="question-answer">
+            <div>
+              <input type="checkbox" value="none" id="checkbox_1" name="service"/>
+              <label for="checkbox_1" class="checkbox"><span>Wash Dry & Fold</span></label>
+            </div>
+            <div>
+              <input type="checkbox" value="none" id="checkbox_2" name="service2"/>
+              <label for="checkbox_2" class="checkbox"><span>Dry Cleaning</span></label>
+            </div>
+            <div>
+              <input type="checkbox" value="none" id="checkbox_3" name="service3"/>
+              <label for="checkbox_3" class="checkbox"><span>Hand Wash</span></label>
+            </div>
+            <div>
+              <input type="checkbox" value="none" id="checkbox_4" name="service4"/>
+              <label for="checkbox_4" class="checkbox"><span>Iron/Press</span></label>
+            </div>
           </div>
         </div>
       
@@ -270,3 +267,5 @@
     </div>
   </body>
 </html>
+
+
