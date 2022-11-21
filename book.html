@@ -4,8 +4,6 @@
     <title>Ez Spin Laundry Shop</title>
     <link rel="icon" type="image/icon" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/b2dc521857.js" crossorigin="anonymous"></script>
     <style>
       html, body {
       min-height: 100%;
@@ -206,15 +204,9 @@
         <p>Email address</p>
         <input type="text" name="emailadd" placeholder="ezspin@gmail.com" required/>
       </div>
-      <div class="item">
-       <p>Pick up time</p>
-       <input type="time" name="ptime" required/>
-       <i class="fa-solid fa-clock"></i>
-     </div>
         <div class="item">
-          <p>Pick up date</p>
-          <input type="date" name="pdate" required/>
-          <i class="fas fa-calendar-alt"></i>
+          <p>Pick up date and time</p>
+          <input type="datetime-local" name="pdate" required/>
         </div>
         <div class="item">
          <p>Pick up address</p>
@@ -222,15 +214,9 @@
            <input type="text" name="paddress" required/>
          </div>
        </div>
-       <div class="item">
-        <p>Delivery time</p>
-        <input type="time" name="dtime" required/>
-        <i class="fa-solid fa-clock"></i>
-      </div>
          <div class="item">
            <p>Delivery date</p>
-           <input type="date" name="ddate" required/>
-           <i class="fas fa-calendar-alt"></i>
+           <input type="datetime-local" name="ddate" required/>
          </div>
          <div class="item">
           <p>Delivery address</p>
