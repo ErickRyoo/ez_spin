@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(132, 208, 233, 0.767),rgba(38, 189, 239, 0.521)), url(/images/bookk.jpg);
+    background-image: linear-gradient(rgba(132, 208, 233, 0.767),rgba(38, 189, 239, 0.521)), url(/images/mochi.jpg);
 }
 
 .container {
