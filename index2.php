@@ -29,7 +29,7 @@
                 <div class="clts_banner_box">
                     <div class="col-lg-2 col-md-2 col-sm-12">
                         <div class="clts_logo ed_element_wrapper">
-                            <a href="index-2.html"><img src="images/logo.svg" alt="laundry-service-logo" title="" class="img-responsive"></a>
+                            <a href="index2.php"><img src="images/logo.svg" alt="laundry-service-logo" title="" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-12">
@@ -51,7 +51,7 @@
                                                 <li><a data-scroll-nav='3'>Prices  </a></li>
                                                 <li><a data-scroll-nav='4'>Blog</a></li>
                                                 <li><a data-scroll-nav='5'>Contact Us</a></li>
-                                                <li><a href="login.html">Login</a></li>
+                                                <li><a href="login_form.php">Login</a></li>
                                                 
                                             </ul>
                                         </div>
@@ -71,7 +71,7 @@
                                     <img src="images/hanger.png" alt="laundry-service-banner-ican">
                                     <h2>Professional Cleaning Services Provider</h2>
                                     <p>Ez Spin Laundry Shop offers great services, so you can get your laundry done in no time.<br>We also offer affordable rates that won't break the bank. So what are you waiting for? Get started today!</p>
-                                    <a href="book.html" class="clts_btn" target="_blank">Book now</a>
+                                    <a href="book.php" class="clts_btn" target="_blank">Book now</a>
                                 </div>
                             </div>
                             <!--2-->
@@ -80,7 +80,7 @@
                                     <img src="images/bath-towel.png" alt="laundry-service-banner-ican2">
                                     <h2>By far the Highest Quality Wash & Fold Service in Town</h2>
                                     <p>Laundry is a very personal service, and we feel honored that clients trust us to take care of their <br> personal garments. We care for every single piece of your clothes. You will receive your incredibly <br>Clean, fresh smelling, perfectly folded clothes delivered back the very next day.</p>
-                                    <a href="book.html" class="clts_btn" target="_blank">Book now</a>
+                                    <a href="book.php" class="clts_btn" target="_blank">Book now</a>
                                 </div>
                             </div>
                             <!--3-->
@@ -89,7 +89,7 @@
                                     <img src="images/electric-iron.png" alt="laundry-service-banner-ican3">
                                     <h2>High-quality cleaning, on your schedule</h2>
                                     <p> Your clothes are picked up from your door,expertly cleaned, and returned 1-3 days later crisp, <br>clean, and ready-to-wear.</p>
-                                    <a href="book.html" class="clts_btn" target="_blank">Book now</a>
+                                    <a href="book.php" class="clts_btn" target="_blank">Book now</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                             <p>Ready to take laundry OFF your to-do list? Priority Laundry Services is the area’s laundry pick up & delivery service you can order right from your phone. Get your dirty laundry picked up and your clean, folded, and sorted clothes delivered right to your door within the SAME DAY or within 24 hours.</p>
                             <p>Reclaim your free time and spend it doing things you enjoy instead. Request a pick up online or give us a call today. Choose from our Weekly Laundry Plans or our One-Time Service.</p>
                             <div style="padding-top:7px;">
-                                <a href="book.html" class="ed_button clts_btn">Book now</a>
+                                <a href="book.php" class="ed_button clts_btn">Book now</a>
                             </div>
                         </div>
                     </div>
@@ -460,7 +460,7 @@
                                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> September 16, 2018</a></li>
                                     </ul>
                                     <p>You might be wondering how to fold laundry. Is it really that difficult? Not at all! We are here to share some insights and make your laundry life easier.</p>
-                                    <div class="blog_btn"><a href="blog.html" class="ed_button clts_btn" target="_blank">view more</a></div>
+                                    <div class="blog_btn"><a href="blog.php" class="ed_button clts_btn" target="_blank">view more</a></div>
                                 </div>
                             </div>
                         </div>
@@ -476,7 +476,7 @@
                                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> November 15, 2022</a></li>
                                     </ul>
                                     <p>Which day of the week is the most dreaded - Monday, Wednesday, or... Is it laundry day? Laundry is one of those necessary but time-consuming chores...</p>
-                                    <div class="blog_btn"><a href="blog2.html" class="ed_button clts_btn" target="_blank">view more</a></div>
+                                    <div class="blog_btn"><a href="blog2.php" class="ed_button clts_btn" target="_blank">view more</a></div>
                                 </div>
                             </div>
 
@@ -619,7 +619,7 @@
                     <img src="images/banner_icon2.png" alt="laundry-service-disinfect">
                     <h1>Effortless Scheduling. Save Time & Money.</h1>
                     <p>We pick up, fresh, clean, and deliver your clean laundry to your doorsteps, Lobby, or in Person.</p>
-                    <a href="contact.html" class="clts_btn" target="_blank">contact us</a>
+                    <a href="contact.php" class="clts_btn" target="_blank">contact us</a>
                 </div>
             </div>
         </div>
