@@ -71,7 +71,7 @@
                                     <img src="images/hanger.png" alt="laundry-service-banner-ican">
                                     <h2>Professional Cleaning Services Provider</h2>
                                     <p>Ez Spin Laundry Shop offers great services, so you can get your laundry done in no time.<br>We also offer affordable rates that won't break the bank. So what are you waiting for? Get started today!</p>
-                                    <a href="book.php" class="clts_btn" target="_blank">Book now</a>
+                                    <a href="login_form.php" class="clts_btn" target="_blank">Book now</a>
                                 </div>
                             </div>
                             <!--2-->
@@ -80,7 +80,7 @@
                                     <img src="images/bath-towel.png" alt="laundry-service-banner-ican2">
                                     <h2>By far the Highest Quality Wash & Fold Service in Town</h2>
                                     <p>Laundry is a very personal service, and we feel honored that clients trust us to take care of their <br> personal garments. We care for every single piece of your clothes. You will receive your incredibly <br>Clean, fresh smelling, perfectly folded clothes delivered back the very next day.</p>
-                                    <a href="book.php" class="clts_btn" target="_blank">Book now</a>
+                                    <a href="login_form.php" class="clts_btn" target="_blank">Book now</a>
                                 </div>
                             </div>
                             <!--3-->
@@ -89,7 +89,7 @@
                                     <img src="images/electric-iron.png" alt="laundry-service-banner-ican3">
                                     <h2>High-quality cleaning, on your schedule</h2>
                                     <p> Your clothes are picked up from your door,expertly cleaned, and returned 1-3 days later crisp, <br>clean, and ready-to-wear.</p>
-                                    <a href="book.php" class="clts_btn" target="_blank">Book now</a>
+                                    <a href="login_form.php" class="clts_btn" target="_blank">Book now</a>
                                 </div>
                             </div>
                         </div>
@@ -697,6 +697,9 @@
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="login_formadmin.php">admin</a>
                             </li>
                         </ul>
                     </div>

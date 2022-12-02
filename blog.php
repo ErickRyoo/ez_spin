@@ -29,7 +29,7 @@
                 <div class="clts_banner_box">
                     <div class="col-lg-2 col-md-2 col-sm-12">
                         <div class="clts_logo ed_element_wrapper">
-                            <a href="index2.html" ><img src="images/logo.svg" alt="" title="" class="img-responsive"></a>
+                            <a href="index2.php" ><img src="images/logo.svg" alt="" title="" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-12">
@@ -46,12 +46,12 @@
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-right:0px;">
                                         <div class="clts_menu nav navbar-nav">
                                             <ul class="ed_element_sorting">
-                                                <li><a href="index-2.html">home</a></li>
-                                                <li><a href="index-2.html">About</a></li>
-                                                <li><a href="index-2.html">services</a></li>
-                                                <li><a href="index-2.html">Prices  </a></li>
-                                                <li><a href="blog.html" class="active">blog</a></li>
-                                                <li><a href="contact.html" target="blank">Contact Us</a></li>
+                                                <li><a href="index2.php" >home</a></li>
+                                                <li><a href="index2.php">About</a></li>
+                                                <li><a href="index2.php">services</a></li>
+                                                <li><a href="index2.php">Prices  </a></li>
+                                                <li><a href="blog.php" class="active">blog</a></li>
+                                                <li><a href="contact.php" target="blank">Contact Us</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6">
 							<ol class="breadcrumb">
-								<li><a href="index-2.html">Home</a></li>
+								<li><a href="index-2.php">Home</a></li>
 								<li class="active"><span>blog</span></li>
 							</ol>
 						</div>

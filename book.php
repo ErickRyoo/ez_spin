@@ -169,67 +169,65 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+   <form action="code.php" method="POST">
         <div class="item">
           <p>Name</p>
           <div class="name-item">
-            <input type="text" name="First" placeholder="First" required/>
-            <input type="text" name="Last" placeholder="Last" required/>
+            <input type="text" name="first" id="first"placeholder="First" required/>
+            <input type="text" name="last" id="last" placeholder="Last" required/>
           </div>
         </div>
         <div class="item">
          <p>Phone number</p>
-         <input type="text" name="pnumber" placeholder="0912-345-6789"required/>
+         <input type="text" name="number" id="number" placeholder="0912-345-6789"required/>
        </div>
        <div class="item">
         <p>Email address</p>
-        <input type="text" name="emailadd" placeholder="ezspin@gmail.com" required/>
+        <input type="text" name="email" id="email" placeholder="ezspin@gmail.com" required/>
       </div>
         <div class="item">
           <p>Pick up date and time</p>
-          <input type="datetime-local" name="pdate" required/>
+          <input type="datetime-local" name="pdate" id="pdate" required/>
         </div>
         <div class="item">
          <p>Pick up address</p>
          <div class="item">
-           <input type="text" name="paddress" required/>
+           <input type="text" name="paddress" id="paddress" required/>
          </div>
        </div>
          <div class="item">
-           <p>Delivery date and time</p>
-           <input type="datetime-local" name="ddate" required/>
+           <p>Delivery date and time<p>(NOTE: Date and time of preferred delivery At least two days after pickup)</p></p>
+           <input type="datetime-local" name="ddate" id="ddate" required/>
          </div>
          <div class="item">
           <p>Delivery address</p>
           <div class="item">
-            <input type="text" name="daddress" required/>
+            <input type="text" name="daddress" id="daddress"required/>
           </div>
         </div>
         <div class="question">
           <p>What services you want to avail?</p>
           <div class="question-answer">
             <div>
-              <input type="checkbox" value="none" id="checkbox_1" name="service"/>
+              <input type="checkbox" value="Wash Dry & Fold" id="checkbox_1" name="services[]"/>
               <label for="checkbox_1" class="checkbox"><span>Wash Dry & Fold</span></label>
             </div>
             <div>
-              <input type="checkbox" value="none" id="checkbox_2" name="service2"/>
+              <input type="checkbox" value="Dry Cleaning" id="checkbox_2" name="services[]"/>
               <label for="checkbox_2" class="checkbox"><span>Dry Cleaning</span></label>
             </div>
             <div>
-              <input type="checkbox" value="none" id="checkbox_3" name="service3"/>
+              <input type="checkbox" value="Hand Wash" id="checkbox_3" name="services[]"/>
               <label for="checkbox_3" class="checkbox"><span>Hand Wash</span></label>
             </div>
             <div>
-              <input type="checkbox" value="none" id="checkbox_4" name="service4"/>
+              <input type="checkbox" value="Iron/Press" id="checkbox_4" name="services[]"/>
               <label for="checkbox_4" class="checkbox"><span>Iron/Press</span></label>
             </div>
           </div>
         </div>
-        
-      
         <div class="btn-block">
-          <button type="submit" href="/">Book</button>
+          <button type="submit" name="submit">Book</button>
         </div>
       </form>
     </div>

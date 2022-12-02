@@ -25,10 +25,8 @@ if(!isset($_SESSION['user_name'])){
         <nav>
             <img src="images/logo.svg" class="logo">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Order Status</a></li>
+                <li><a href="book.php">Book Now</a></li>
+                <li><a href="order.php">Order Status</a></li>
             </ul>
             <img src="images/profilepic.png" class="user-pic" onclick="toggleMenu()">
 
@@ -43,24 +41,35 @@ if(!isset($_SESSION['user_name'])){
                     <a href="#" class="sub-menu-link">
                         <img src="images/profile.png">
                         <p>Edit Profile</p>
-                        <span>></span>
+                        <span></span>
                     </a>
                     <a href="#" class="sub-menu-link">
                         <img src="images/settings.png">
-                        <p>Settings & Privacy</p>
-                        <span>></span>
+                        <p>Settings</p>
+                        <span></span>
                     </a>
                     <a href="logout.php" class="sub-menu-link">
                         <img src="images/logout.png">
                         <p>Logout</p>
-                        <span>></span>
+                        <span></span>
                     </a>
                     
                 </div> 
             </div>
         </nav>
-    </div>
 
+        <div class="content">
+            <h1>EFFORTLESS SCHEDULING SAVE TIME & MONEY</h1> 
+            <p>Ez Spin offers great services, so you can get your laundry done in no time.</p>
+            <div>
+                <a href="book.php">
+                <button type="button"><span class="button"></span>BOOK NOW</button>
+                </a>
+                <button type="button"><span class="button"></span> ORDER STATUS</button>
+            </div>
+        </div>
+    </div>
+    <div class="background-image"></div>
 <script>
     let subMenu = document.getElementById("subMenu");
 

@@ -1,15 +1,3 @@
-<?php
-
-@include 'config.php';
-
-session_start();
-
-if(!isset($_SESSION['admin_name'])){
-   header('location:login_form.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +5,9 @@ if(!isset($_SESSION['admin_name'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ez Spin Admin Panel</title>
+    <title>Ez Spin Laundry Shop</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="css/mainadmin.css">
-    <link rel="icon" type="image/icon" href="favicon.png" />
-
+    <link rel="stylesheet" href="css/appointment.css">
 </head>
 
 <body>
@@ -88,97 +74,20 @@ if(!isset($_SESSION['admin_name'])){
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">
-
-                        <?php
-$con=mysqli_connect("localhost","root","","booking_db");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-$sql="SELECT first,last FROM book ORDER BY first";
-
-if ($result=mysqli_query($con,$sql))
-  {
-  // Return the number of rows in result set
-  $rowcount=mysqli_num_rows($result);
-  printf(" %d\n",$rowcount);
-  // Free result set
-  mysqli_free_result($result);
-  }
-mysqli_close($con);
-?>                      </div>
-                        <div class="cardName">Total Appointment</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="calendar-clear-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">
-
-                        <?php
-$con=mysqli_connect("localhost","root","","user_db");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-$sql="SELECT name FROM user_form ORDER BY name";
-
-if ($result=mysqli_query($con,$sql))
-  {
-  // Return the number of rows in result set
-  $rowcount=mysqli_num_rows($result);
-  printf(" %d\n",$rowcount);
-  // Free result set
-  mysqli_free_result($result);
-  }
-mysqli_close($con);
-?>          
-                        </div>
-                        <div class="cardName">Registered Users</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="hourglass-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">0</div>
-                        <div class="cardName">Completed</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ================ Order Details List ================= -->
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Recent Books</h2>
-                        <a href="appointmentlist.php" class="btn">View All</a>
+                        <h2>Appointment List</h2>
+                        <a href='create.php'>
+                            <button type='button' style="background-color: #008CBA;border: none; color: white;  padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;border-radius: 12px;"><span class='adduser'></span>Add</button>
+                        </a>
+
                     </div>
 
                     <table>
                         <thead>
                             <tr>
-                                <td>id</td>
+                            <td>id</td>
                                 <td>First</td>
                                 <td>Last</td>
                                 <td>Number</td>
@@ -188,11 +97,12 @@ mysqli_close($con);
                                 <td>Delivery Date</td>
                                 <td>Delivery Address</td>
                                 <td>Services</td>
+                                <td>Action</td>
                             </tr>
                         </thead>
 
                         <tbody>
-                        <?php
+                            <?php
                             $servername= "localhost";
                             $username= "root";
                             $password = " ";
@@ -207,7 +117,7 @@ mysqli_close($con);
                             }
 
                             //read all row from database table
-                            $sql = "SELECT * FROM book ORDER BY ID DESC LIMIT 4";
+                            $sql = "SELECT * FROM book";
                             $result = $connection->query($sql);
 
                             if (!$result) {
@@ -228,73 +138,24 @@ mysqli_close($con);
                                 <td>$row[ddate]</td>
                                 <td>$row[daddress]</td>
                                 <td>$row[services]</td>
+                                <td>
+                                    <a href='edit.php?id=$row[id]'>
+                                    <button type='button'style='background-color: #4CAF50;border: none; color: white;  padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;border-radius: 8px;'><span class='button'></span>Edit</button>
+                                    </a>
+                                    <a href='delete.php?id=$row[id]'>
+                                    <button type='button'style='background-color: #008CBA;border: none; color: white;  padding: 5px 10px;text-align: center;text-decoration: none;display: inline-block;border-radius: 8px;' ><span class='button'></span>Delete</button>
+                                    </a>
+                                </td>
                             </tr>
                             ";
                             }
                             ?>
-                            
-
-                           
-
-                           
-                            
-
                         </tbody>
                     </table>
                 </div>
 
                 <!-- ================= New Customers ================ -->
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Admininstrators</h2>
-                    </div>
-
-                    <table>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Erick(Admin1) <br> <span>Balagtas Branch</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Mochi(Admin2) <br> <span>Lipa Branch</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Kimchi(Admin3) <br> <span>Batangas City Branch</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Jussel(Admin4) <br> <span>Ibaan Branch</span></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="images/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Andre (Admin5) <br> <span>Quezon Branch</span></h4>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -305,6 +166,7 @@ mysqli_close($con);
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>

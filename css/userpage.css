@@ -6,12 +6,12 @@
 }
 .hero{
     width: 100%;
-    min-height: 100vh;
-    background: #ffffff;
-    color: #525252;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0,0,0,0.75)), url("/spin/images/backg.jpg");
+    background-size: cover;
+    background-position: center;
 }
 nav{
-    background:#97d3dd86 ;
     width: 100%;
     padding: 11px 11%;
     display: flex;
@@ -20,7 +20,7 @@ nav{
     position: relative;
 }
 .logo{
-    width: 120px;
+    width: 150px;
 }
 .user-pic{
     width: 40px;
@@ -37,11 +37,28 @@ nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    font-size: 18px;
 }
 nav ul li a{
     color: #26bdef;
     text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
 }
+nav ul li a::after{
+    content:'';
+    height: 3px;
+    width:0;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
 .sub-menu-wrap{
     position: absolute;
     top: 100%;
@@ -105,4 +122,52 @@ nav ul li a{
 }
 .sub-menu-link:hover p{
     font-weight: 600;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align:center;
+    color: #fff;
+}
+.content h1{
+    font-size: 60px;
+    margin-top: 80px;
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height:25px;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #26bdef;;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background:#26bdef;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
 }
