@@ -60,12 +60,14 @@ if(!isset($_SESSION['user_name'])){
 
         <div class="content">
             <h1>EFFORTLESS SCHEDULING SAVE TIME & MONEY</h1> 
-            <p>Ez Spin offers great services, so you can get your laundry done in no time.</p>
+            <p> We offers great services, so you can get your laundry done in no time.</p>
             <div>
                 <a href="book.php">
                 <button type="button"><span class="button"></span>BOOK NOW</button>
                 </a>
-                <button type="button"><span class="button"></span> ORDER STATUS</button>
+                <a href="order.php"">
+                <button type="button"><span class="button"></span> ORDER STATUS</button></a>
+               
             </div>
         </div>
     </div>
