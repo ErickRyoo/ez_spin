@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 11:35 PM
+-- Generation Time: Dec 04, 2022 at 10:31 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -32,21 +32,20 @@ CREATE TABLE `user_form` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `user_type` varchar(255) NOT NULL DEFAULT 'user'
+  `user_type` varchar(255) NOT NULL DEFAULT 'user',
+  `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_form`
 --
 
-INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
-(1, 'Admin1', 'spinadmin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'admin'),
-(2, 'Admin2', 'ezspinlaundry@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'admin'),
-(3, 'Erick Reu Sumague', 'ercs@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(4, 'Admin3', 'spinadmin3@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'admin'),
-(5, 'Admin4', 'spinadmin4@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'admin'),
-(6, 'Admin5', 'spinadmin@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'admin'),
-(7, 'Alexa', 'Alexa@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', 'user');
+INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`, `image`) VALUES
+(1, 'Admin1', 'admin1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', ''),
+(2, 'King James', 'kingjames@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user', 'customer02.jpg'),
+(3, 'Erick Reu Sumague', 'ercs@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user', '289735268_3235287596721788_5080400530636602474_n.jpg'),
+(4, 'Messi Goat', 'messi@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user', '2517357-52245850-2560-1440.jpg'),
+(5, 'sample', 'sample@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user', 'images.jpg');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +65,7 @@ ALTER TABLE `user_form`
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 11:35 PM
+-- Generation Time: Dec 04, 2022 at 10:32 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -52,8 +52,7 @@ INSERT INTO `book` (`id`, `first`, `last`, `number`, `email`, `pdate`, `paddress
 (5, 'Lebron ', 'James', 946238732, 'HEHE@gmail.com', '2022-12-05T15:04', 'Soro Soro', '2022-11-29T03:04', 'Lipa City', 'Iron/Press'),
 (6, 'Howard', 'Dogshit', 912345334, 'dogodog@gmail.com', '2022-12-02T09:01', 'Alangilan', '2022-12-08T16:00', 'Alangilan', 'Wash Dry & Fold,Dry Cleaning'),
 (7, 'Airapot', 'Venerable', 918289457, 'ajvenerable@gmail.com', '2022-12-04T10:30', 'Masin Norte ', '2022-12-08T15:30', 'Masin Norte', 'Wash Dry & Fold,Dry Cleaning,Hand Wash,Iron/Press'),
-(8, 'Lebron ', 'James', 947272922, 'Leberon@gmail.com', 'Dec-5-2022 7:30 AM', 'Malabanban Norte', 'Dec-7-2022 10:30 AM', 'Malabanban Norte', 'Dry cleaning'),
-(9, 'Kevin', 'Durant', 948232323, 'KevinMorant@gmail.com', '2022-12-03T01:02', 'Mahabang parang', '2022-12-10T14:03', 'Mahabang parang', 'Wash Dry & Fold,Dry Cleaning');
+(8, 'Lebron ', 'James', 947272922, 'Leberon@gmail.com', 'Dec-5-2022 7:30 AM', 'Malabanban Norte', 'Dec-7-2022 10:30 AM', 'Malabanban Norte', 'Dry cleaning');
 
 --
 -- Indexes for dumped tables
