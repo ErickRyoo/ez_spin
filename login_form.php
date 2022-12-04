@@ -1,44 +1,26 @@
 <?php
 
-@include 'config.php';
-
+include 'config.php';
 session_start();
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:admin_page.php');
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_name'] = $row['name'];
-         header('location:user_page.php');
-
-      }
-     
+   if(mysqli_num_rows($select) > 0){
+      $row = mysqli_fetch_assoc($select);
+      $_SESSION['user_id'] = $row['id'];
+      header('location: user_page.php');
    }else{
-      $error[] = 'incorrect email or password!';
+      $message[] = 'incorrect email or password!';
    }
 
-};
-?>
+}
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,8 +30,8 @@ if(isset($_POST['submit'])){
    <title>Login form</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/login.css">
    <link rel="icon" type="image/icon" href="favicon.png" />
+   <link rel="stylesheet" href="css/loginadmin.css">
 
 </head>
 <body>
@@ -59,12 +41,13 @@ if(isset($_POST['submit'])){
    <form action="" method="post">
       <h3>login now</h3>
       <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
+      if(isset($message)){
+         foreach($message as $message){
+            echo '<div class="message">'.$message.'</div>';
+         }
+      }
       ?>
+      
       <input type="email" name="email" required placeholder="enter your email">
       <input type="password" name="password" required placeholder="enter your password">
       <input type="submit" name="submit" value="login now" class="form-btn">

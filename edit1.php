@@ -12,7 +12,6 @@ $id = "";
 $name = "";
 $email = "";
 $password = "";
-$user_type = "";
 
 $errorMessage ="";
 $successMessage ="";

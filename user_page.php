@@ -1,15 +1,20 @@
 <?php
 
-@include 'config.php';
-
+include 'config.php';
 session_start();
+$user_id = $_SESSION['user_id'];
 
-if(!isset($_SESSION['user_name'])){
+if(!isset($user_id)){
    header('location:login_form.php');
-}
+};
+
+if(isset($_GET['logout'])){
+    unset($user_id);
+    session_destroy();
+    header('location: login_form.php');
+ }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +24,7 @@ if(!isset($_SESSION['user_name'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ez Spin Laundry Shop</title>
     <link rel="stylesheet" href="css/userpage.css">
+    <link rel="icon" type="image/icon" href="favicon.png" />
 </head>
 <body>
     <div class="hero">
@@ -28,27 +34,45 @@ if(!isset($_SESSION['user_name'])){
                 <li><a href="book.php">Book Now</a></li>
                 <li><a href="order.php">Order Status</a></li>
             </ul>
-            <img src="images/profilepic.png" class="user-pic" onclick="toggleMenu()">
+
+            <?php
+         $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+         if(mysqli_num_rows($select) > 0){
+            $fetch = mysqli_fetch_assoc($select);
+         }
+         if($fetch['image'] == ''){
+            echo '<img src="images/default-avatar.png" class="user-pic" onclick="toggleMenu()">';
+         }else{
+            echo '<img src="uploaded_img/'.$fetch['image'].'"class="user-pic" onclick="toggleMenu()">';
+         }
+      ?>
 
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
-                        <img src="images/profilepic.png" alt="">
-                        <h3><?php echo $_SESSION['user_name'] ?></h3>
+                    <?php
+         $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+         if(mysqli_num_rows($select) > 0){
+            $fetch = mysqli_fetch_assoc($select);
+         }
+         if($fetch['image'] == ''){
+            echo '<img src="images/default-avatar.png" class="user-pic" onclick="toggleMenu()">';
+         }else{
+            echo '<img src="uploaded_img/'.$fetch['image'].'"class="user-pic" onclick="toggleMenu()">';
+         }
+      ?>
+                    
+                    <h3><?php echo $fetch['name']; ?></h3>
                     </div>
                     <hr>
 
-                    <a href="#" class="sub-menu-link">
-                        <img src="images/profile.png">
+                    <a href="update_profile.php" class="sub-menu-link">
+                    <img src="images/profile.png">
                         <p>Edit Profile</p>
                         <span></span>
                     </a>
-                    <a href="#" class="sub-menu-link">
-                        <img src="images/settings.png">
-                        <p>Settings</p>
-                        <span></span>
-                    </a>
-                    <a href="logout.php" class="sub-menu-link">
+
+                    <a href="index.php?logout=<?php echo $user_id; ?>" class="sub-menu-link">
                         <img src="images/logout.png">
                         <p>Logout</p>
                         <span></span>

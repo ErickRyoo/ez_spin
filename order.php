@@ -20,6 +20,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/orderstatus.css" />
+    <link rel="icon" type="image/icon" href="favicon.png" />
     <title>Ez Spin Laundry</title>
   </head>
   <body>

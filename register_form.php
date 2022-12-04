@@ -1,36 +1,42 @@
 <?php
 
-@include 'config.php';
+include 'config.php';
 
 if(isset($_POST['submit'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+   $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+   $image = $_FILES['image']['name'];
+   $image_size = $_FILES['image']['size'];
+   $image_tmp_name = $_FILES['image']['tmp_name'];
+   $image_folder = 'uploaded_img/'.$image;
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $error[] = 'user already exist!';
-
+   
+   if(mysqli_num_rows($select) > 0){
+      $message[] = 'user already exist'; 
    }else{
-
       if($pass != $cpass){
-         $error[] = 'password not matched!';
+         $message[] = 'confirm password not matched!';
+      }elseif($image_size > 2000000){
+         $message[] = 'image size is too large!';
       }else{
-         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
-         mysqli_query($conn, $insert);
-         header('location:login_form.php');
+         $insert = mysqli_query($conn, "INSERT INTO `user_form`(name, email, password, image) VALUES('$name', '$email', '$pass', '$image')") or die('query failed');
+
+         if($insert){
+            move_uploaded_file($image_tmp_name, $image_folder);
+            $message[] = 'registered successfully!';
+            header('location:login_form.php');
+         }else{
+            $message[] = 'registeration failed!';
+         }
       }
    }
 
-};
-
+}
 
 ?>
 
@@ -43,29 +49,27 @@ if(isset($_POST['submit'])){
    <title>register form</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/login.css">
+   <link rel="stylesheet" href="css/loginadmin.css">
 
 </head>
 <body>
    
 <div class="form-container">
 
-   <form action="" method="post">
+   <form action="" method="post" enctype="multipart/form-data">
       <h3>register now</h3>
       <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
+      if(isset($message)){
+         foreach($message as $message){
+            echo '<div class="message">'.$message.'</div>';
+         }
+      }
       ?>
-      <input type="text" name="name" required placeholder="enter your name">
+      <input type="text" name="name" required placeholder="enter your  full name">
       <input type="email" name="email" required placeholder="enter your email">
       <input type="password" name="password" required placeholder="enter your password">
       <input type="password" name="cpassword" required placeholder="confirm your password">
-      <select name="user_type">
-         <option value="user">user</option>
-      </select>
+      <input type="file" name="image"  accept="image/jpg, image/jpeg, image/png">
       <input type="submit" name="submit" value="register now" class="form-btn">
       <p>already have an account? <a href="login_form.php">login now</a></p>
    </form>
